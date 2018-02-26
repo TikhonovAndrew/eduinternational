@@ -1,8 +1,7 @@
 class Post < ApplicationRecord
+  validates :name, :title, :body, presence: true
   extend FriendlyId
   friendly_id :name, use: :slugged
-
-  belongs_to :team_member
 
   def should_generate_new_friendly_id?
     slug.blank? || title_changed?

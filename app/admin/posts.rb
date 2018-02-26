@@ -1,30 +1,33 @@
 ActiveAdmin.register Post do
-  permit_params :name, :body, :branch, :cover, :post_image
+  menu parent: 'Components'
+  permit_params :name, :title, :body, :branch, :cover, :post_image, :slug, :published_at
   index do
     selectable_column
     column :branch
     column :name
-    column :body, truncate(100)
+    column :title
     column :created_at
     actions
   end
 
+  controller do
+    def find_resource
+      scoped_collection.friendly.find(params[:id])
+    end
+  end
+
   filter :branch
   filter :name
+  filter :title
   filter :body
   filter :created_at
-
-  controller do
-  def find_resource
-    scoped_collection.friendly.find(params[:id])
-  end
-end
 
 
     form do |f|
     f.inputs do
-      f.input :branch, collection: ['Eduinternational', 'Baku', 'Kiev', 'Lviv', 'Odessa', 'Tbilisi', 'Terana']
+      f.input :branch, collection: ['Eduinternational', 'Baku', 'Kiev', 'Lviv', 'Odessa', 'Tbilisi', 'Tirana']
       f.input :name
+      f.input :title
       f.input :body
       f.input :cover
       f.input :post_image

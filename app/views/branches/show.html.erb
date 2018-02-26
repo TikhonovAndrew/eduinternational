@@ -1,0 +1,285 @@
+<% @branches.each do | branch | %>
+<% branch.city == '?' %>
+<% case branch.city %>      
+<% when branch.city = 'Kiev' %>
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <!-- Title -->
+  <title><%= branch.name %> || <%= branch.title %></title>
+
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../favicon.ico">
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+  <!-- CSS Global Compulsory -->
+  <link rel="stylesheet" href="../assets/vendor/bootstrap/bootstrap.min.css">
+  <!-- CSS Global Icons -->
+  <link rel="stylesheet" href="../assets/vendor/icon-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../assets/vendor/icon-line/css/simple-line-icons.css">
+  <link rel="stylesheet" href="../assets/vendor/icon-etlinefont/style.css">
+  <link rel="stylesheet" href="../assets/vendor/icon-line-pro/style.css">
+  <link rel="stylesheet" href="../assets/vendor/icon-hs/style.css">
+  <link rel="stylesheet" href="../assets/vendor/dzsparallaxer/dzsparallaxer.css">
+  <link rel="stylesheet" href="../assets/vendor/dzsparallaxer/dzsscroller/scroller.css">
+  <link rel="stylesheet" href="../assets/vendor/dzsparallaxer/advancedscroller/plugin.css">
+  <link rel="stylesheet" href="../assets/vendor/animate.css">
+  <link rel="stylesheet" href="../assets/vendor/fancybox/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="../assets/vendor/slick-carousel/slick/slick.css">
+  <link rel="stylesheet" href="../assets/vendor/typedjs/typed.css">
+  <link rel="stylesheet" href="../assets/vendor/hs-megamenu/src/hs.megamenu.css">
+  <link rel="stylesheet" href="../assets/vendor/hamburgers/hamburgers.min.css">
+
+  <!-- CSS Unify -->
+  <link rel="stylesheet" href="/kiev/assets/css/unify-core.css">
+  <link rel="stylesheet" href="/kiev/assets/css/unify-components.css">
+  <link rel="stylesheet" href="/kiev/assets/css/unify-globals.css">
+
+  <!-- CSS Customization -->
+  <link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+
+<body>
+  <main>
+
+
+
+    <!-- Header -->
+    <header id="js-header" class="u-header u-header--sticky-top u-header--change-logo u-header--change-appearance" data-header-fix-moment="100">
+      <div class="u-header__section g-transition-0_3 u-header__section--dark g-bg-black-opacity-0_7 g-py-10" data-header-fix-moment-exclude="u-header__section--dark g-bg-black-opacity-0_7 g-py-10" data-header-fix-moment-classes="u-header__section--light g-bg-white u-shadow-v18 g-py-5">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container">
+            <!-- Responsive Toggle Button -->
+            <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
+              <span class="hamburger hamburger--slider">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+              </span>
+              </span>
+            </button>
+            <!-- End Responsive Toggle Button -->
+            <!-- Logo -->
+            <a href="../../../index.html" class="navbar-brand u-header__logo">
+              <img class="u-header__logo-img u-header__logo-img--main" style="background-image: url(<%= branch.branch_logo %>)" alt="StudentStudy">
+            </a>
+            <!-- End Logo -->
+
+            <!-- Navigation -->
+            <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg" id="navBar">
+              <ul class="navbar-nav text-uppercase g-font-weight-600 ml-auto">
+                <li class="nav-item g-mx-20--lg">
+                  <a href="#" class="nav-link px-0">Главная
+                
+              </a>
+              <li class="nav-item g-mx-20--lg">
+                  <a href="#about" class="nav-link px-0">О нас
+                
+              </a>
+                </li>
+                <li class="nav-item g-mx-20--lg">
+                  <a href="#latestposts" class="nav-link px-0">Новости
+                
+              </a>
+
+                </li>
+                <li class="nav-item g-mx-20--lg">
+                  <a href="#events" class="nav-link px-0">Мероприятия
+              </a>
+                </li>
+                <li class="nav-item g-mx-20--lg">
+                  <a href="#!" class="nav-link px-0">Страны
+                
+              </a>
+                </li>
+                <li class="nav-item g-mx-20--lg">
+                  <a href="#!" class="nav-link px-0">Университеты
+                
+              </a>
+                </li>
+                <li class="nav-item g-ml-20--lg g-mr-0--lg">
+                  <a href="#!" class="nav-link px-0">Контакты
+                
+              </a>
+                </li>
+              </ul>
+            </div>
+            <!-- End Navigation -->
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Promo Block -->
+    <section class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll loaded dzsprx-readyall" data-options='{direction: "reverse", settings_mode_oneelement_max_offset: "150"}'>
+      <div class="divimage dzsparallaxer--target w-100 g-bg-pos-bottom-center" style="height: 120%; background-image: url(<%= branch.cover %>);"></div>
+
+      <div class="container g-py-200">
+        <div class="row">
+          <div class="col-md-6">
+            <h3 class="g-color-black g-font-weight-300 g-font-size-40 g-line-height-1_2 mb-4">Образование зарубежом! <br>
+              </h3>
+            <span class="d-block g-color-black-opacity-0_8 g-font-size-16 mb-5"><%= branch.title %></span>
+            <a class="js-fancybox u-link-v5 g-color-black" href="javascript:;" data-src="<%= branch.video_link %>" data-speed="350" data-caption="Single Item">
+              <span class="align-middle u-icon-v3 u-block-hover--scale g-bg-white g-color-black g-color-primary--hover g-rounded-50x g-cursor-pointer mr-2">
+                  <i class="g-font-size-18 g-pos-rel g-left-2 fa fa-play"></i>
+                </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Promo Block -->
+
+ 
+    <hr class="g-brd-gray-light-v4 my-0">
+
+    <!-- About Our Company -->
+    <section class="1g-bg-secondary g-py-100" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 align-self-center g-mb-100 g-mb-0--lg">
+            <header class="u-heading-v2-3--bottom g-brd-primary g-mb-20">
+              <h2 class="h4 u-heading-v2__title g-color-gray-dark-v2 g-font-weight-600 text-uppercase"> Немного о нас !</h2>
+            </header>
+
+            <p class="g-font-size-16 g-mb-30"><%= branch.description.truncate(300) %></p>
+
+            <ul class="list-unstyled g-color-gray-dark-v4 mb-0">
+              <li class="d-flex g-mb-10">
+                <i class="icon-check g-color-primary g-mt-5 g-mr-10"></i> Лучшие университеты мира!
+              </li>
+              <li class="d-flex g-mb-10">
+                <i class="icon-check g-color-primary g-mt-5 g-mr-10"></i> Вы платите только за обучение!
+              </li>
+              <li class="d-flex g-mb-10">
+                <i class="icon-check g-color-primary g-mt-5 g-mr-10"></i> Полная поддержка на все время обучения!
+              </li>
+              <li class="d-flex g-mb-10">
+                <i class="icon-check g-color-primary g-mt-5 g-mr-10"></i> Более 15 стран мира!
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-6 g-bg-img-hero g-pos-rel" style="background-image: url(<%= branch.slider_image %>);">
+            <div class="g-absolute-centered text-center w-100 g-px-40">
+              <h2 class="h1 g-color-gray-light-v2 g-font-weight-600 g-letter-spacing-0_5">
+                  <span class="u-text-animation u-text-animation--typing"></span></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End About Our Company -->
+
+    <!-- End Copyright Footer -->
+    <a class="js-go-to u-go-to-v1" href="#!" data-type="fixed" data-position='{
+     "bottom": 15,
+     "right": 15
+   }' data-offset-top="400" data-compensation="#js-header" data-show-effect="zoomIn">
+      <i class="hs-icon hs-icon-arrow-top"></i>
+    </a>
+  </main>
+
+  <div class="u-outer-spaces-helper"></div>
+
+
+  <!-- JS Global Compulsory -->
+  <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+  <script src="../../assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
+  <script src="../../assets/vendor/popper.min.js"></script>
+  <script src="../../assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+
+  <!-- JS Implementing Plugins -->
+  <script src="../../assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+  <script src="../../assets/vendor/dzsparallaxer/dzsparallaxer.js"></script>
+  <script src="../../assets/vendor/dzsparallaxer/dzsscroller/scroller.js"></script>
+  <script src="../../assets/vendor/dzsparallaxer/advancedscroller/plugin.js"></script>
+  <script src="../../assets/vendor/fancybox/jquery.fancybox.min.js"></script>
+  <script src="../../assets/vendor/slick-carousel/slick/slick.js"></script>
+  <script src="../../assets/vendor/typedjs/typed.min.js"></script>
+
+  <!-- JS Unify -->
+  <script src="../assets/js/hs.core.js"></script>
+  <script src="../assets/js/components/hs.header.js"></script>
+  <script src="../assets/js/helpers/hs.hamburgers.js"></script>
+  <script src="../assets/js/components/hs.tabs.js"></script>
+  <script src="../assets/js/components/hs.popup.js"></script>
+  <script src="../assets/js/components/hs.carousel.js"></script>
+  <script src="../assets/js/components/text-animation/hs.text-slideshow.js"></script>
+  <script src="../assets/js/components/hs.go-to.js"></script>
+
+  <!-- JS Customization -->
+  <script src="../../assets/js/custom.js"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+    $(document).on('ready', function () {
+        // initialization of carousel
+        $.HSCore.components.HSCarousel.init('.js-carousel');
+
+        // initialization of tabs
+        $.HSCore.components.HSTabs.init('[role="tablist"]');
+
+        // initialization of popups
+        $.HSCore.components.HSPopup.init('.js-fancybox');
+
+        // initialization of go to
+        $.HSCore.components.HSGoTo.init('.js-go-to');
+
+        // initialization of text animation (typing)
+        $(".u-text-animation.u-text-animation--typing").typed({
+          strings: [
+            "Лучший Выбор!",
+            "Поддержка 24/7!",
+            "Путь к успеху!"
+          ],
+          typeSpeed: 60,
+          loop: true,
+          backDelay: 1500
+        });
+      });
+
+      $(window).on('load', function () {
+        // initialization of header
+        
+        $.HSCore.helpers.HSHamburgers.init('.hamburger');
+        $.HSCore.components.HSScrollNav.init($('#js-scroll-nav'), {
+          duration: 700
+        });
+        
+
+        // initialization of HSMegaMenu component
+        $('.js-mega-menu').HSMegaMenu({
+          event: 'hover',
+          pageContainer: $('.container'),
+          breakpoint: 991
+        });
+      });
+
+      $(window).on('resize', function () {
+        setTimeout(function () {
+          $.HSCore.components.HSTabs.init('[role="tablist"]');
+        }, 200);
+      });
+  </script>
+
+
+
+
+
+
+
+</body>
+
+</html>
+<% when branch.city = 'Baku' %>
+<% else %>
+<% end %>
+<% end %>

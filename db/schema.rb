@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180223191013) do
+ActiveRecord::Schema.define(version: 20180225234122) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -26,13 +26,52 @@ ActiveRecord::Schema.define(version: 20180223191013) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
   end
 
+  create_table "branches", force: :cascade do |t|
+    t.string "city"
+    t.string "name"
+    t.string "title"
+    t.text "description"
+    t.decimal "google_map_latitude"
+    t.decimal "google_map_longitude"
+    t.string "address"
+    t.string "phone"
+    t.string "email"
+    t.datetime "opened_at"
+    t.string "cover_file_name"
+    t.string "cover_content_type"
+    t.integer "cover_file_size"
+    t.datetime "cover_updated_at"
+    t.string "branch_logo_file_name"
+    t.string "branch_logo_content_type"
+    t.integer "branch_logo_file_size"
+    t.datetime "branch_logo_updated_at"
+    t.string "slider_image_file_name"
+    t.string "slider_image_content_type"
+    t.integer "slider_image_file_size"
+    t.datetime "slider_image_updated_at"
+    t.string "slider_image1_file_name"
+    t.string "slider_image1_content_type"
+    t.integer "slider_image1_file_size"
+    t.datetime "slider_image1_updated_at"
+    t.string "video_link"
+    t.string "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_branches_on_slug", unique: true
+  end
+
   create_table "countries", force: :cascade do |t|
+    t.string "branch"
     t.string "name"
     t.text "about"
     t.text "visa_box"
     t.string "slug"
     t.string "video"
     t.string "country_code"
+    t.string "country_image_file_name"
+    t.string "country_image_content_type"
+    t.integer "country_image_file_size"
+    t.datetime "country_image_updated_at"
     t.boolean "selective"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -78,6 +117,17 @@ ActiveRecord::Schema.define(version: 20180223191013) do
     t.index ["slug"], name: "index_events_on_slug", unique: true
   end
 
+  create_table "fair_confirmations", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "email"
+    t.string "phone"
+    t.integer "fair_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fair_id"], name: "index_fair_confirmations_on_fair_id"
+  end
+
   create_table "fairs", force: :cascade do |t|
     t.string "branch"
     t.string "name"
@@ -116,6 +166,7 @@ ActiveRecord::Schema.define(version: 20180223191013) do
   create_table "posts", force: :cascade do |t|
     t.string "branch"
     t.string "name"
+    t.string "title"
     t.text "body"
     t.datetime "published_at"
     t.string "cover_file_name"
@@ -126,11 +177,18 @@ ActiveRecord::Schema.define(version: 20180223191013) do
     t.string "post_image_content_type"
     t.integer "post_image_file_size"
     t.datetime "post_image_updated_at"
+    t.string "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "team_member_id"
-    t.index ["team_member_id"], name: "index_posts_on_team_member_id"
-    t.index [nil], name: "index_posts_on_slug", unique: true
+    t.index ["slug"], name: "index_posts_on_slug", unique: true
+  end
+
+  create_table "programs", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "school_id"
+    t.index ["school_id"], name: "index_programs_on_school_id"
   end
 
   create_table "schools", force: :cascade do |t|
@@ -155,6 +213,15 @@ ActiveRecord::Schema.define(version: 20180223191013) do
     t.integer "country_id"
     t.index ["country_id"], name: "index_schools_on_country_id"
     t.index ["slug"], name: "index_schools_on_slug", unique: true
+  end
+
+  create_table "socials", force: :cascade do |t|
+    t.string "name"
+    t.string "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "branch_id"
+    t.index ["branch_id"], name: "index_socials_on_branch_id"
   end
 
   create_table "team_members", force: :cascade do |t|

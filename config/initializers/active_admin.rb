@@ -1,4 +1,13 @@
 ActiveAdmin.setup do |config|
+
+  config.namespace :admin do |admin|
+  admin.build_menu do |menu|
+    menu.add label: 'Components', priority: 3
+    menu.add label: 'General', priority: 2
+    menu.add label: 'Registrations', priority: 4
+  end
+end
+
   # == Site Title
   #
   # Set the title that is displayed on the main layout

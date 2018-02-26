@@ -1,4 +1,5 @@
 ActiveAdmin.register TeamMember do
+  menu parent: 'General'
   permit_params :name, :surname, :position, :email, :phone, :password, :password_confirmation, :branch, :social, :profile_image
 
   index do
@@ -32,7 +33,7 @@ ActiveAdmin.register TeamMember do
       f.input :social
       f.input :password
       f.input :password_confirmation
-      f.input :branch, collection: ['Eduinternational', 'Baku', 'Kiev', 'Lviv', 'Odessa', 'Tbilisi', 'Terana']
+      f.input :branch
       f.input :profile_image
 
     end

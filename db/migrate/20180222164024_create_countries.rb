@@ -1,12 +1,14 @@
 class CreateCountries < ActiveRecord::Migration[5.1]
   def change
     create_table :countries do |t|
+      t.string :branch
       t.string :name
       t.text :about
       t.text :visa_box
       t.string :slug
       t.string :video
       t.string :country_code
+      t.has_attached_file :country_image
       t.boolean :selective
 
       t.timestamps null: false

@@ -1,4 +1,5 @@
 ActiveAdmin.register Fair do
+  menu parent: 'Components'
   permit_params :branch, :name, :location, :description, :cover, :fair_date_time, :fair_date_time_end, :slug, :google_map_latitude, :google_map_longitude, :fair_image
 
   index do
@@ -24,7 +25,7 @@ end
 
     form do |f|
     f.inputs do
-      f.input :branch, collection: ['Eduinternational', 'Baku', 'Kiev', 'Lviv', 'Odessa', 'Tbilisi', 'Terana']
+      f.input :branch, collection: ['Eduinternational', 'Baku', 'Kiev', 'Lviv', 'Odessa', 'Tbilisi', 'Tirana']
       f.input :name
       f.input :location
       f.input :google_map_latitude

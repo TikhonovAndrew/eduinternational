@@ -1,4 +1,5 @@
 ActiveAdmin.register School do
+  menu parent: 'Components'
   permit_params :branch, :name, :about, :summary, :cover, :video, :category, :link, :cover, :school_image, :slug, :country, :country_id
   index do
     selectable_column
@@ -17,13 +18,12 @@ ActiveAdmin.register School do
   def find_resource
     scoped_collection.friendly.find(params[:id])
   end
-end
 
+end
 
     form do |f|
     f.inputs do
-      f.input :branch, collection: ['Eduinternational', 'Baku', 'Kiev', 'Lviv', 'Odessa', 'Tbilisi', 'Terana']
-      f.input :country
+      f.input :branch, collection: ['Eduinternational', 'Baku', 'Kiev', 'Lviv', 'Odessa', 'Tbilisi', 'Tirana']
       f.input :name
       f.input :category, collection: ['Secondary Education', 'Higher Education']
       f.input :about

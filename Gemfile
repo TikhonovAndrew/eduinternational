@@ -13,6 +13,7 @@ gem 'simple_form'
 gem 'country_select'
 gem "simple_calendar", "~> 2.0"
 gem 'friendly_id', '~> 5.1.0'
+gem 'activeadmin-index_as_calendar', github: 'bys-control/activeadmin-index_as_calendar'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'

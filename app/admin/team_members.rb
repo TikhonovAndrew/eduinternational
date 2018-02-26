@@ -1,6 +1,6 @@
 ActiveAdmin.register TeamMember do
   menu parent: 'General'
-  permit_params :name, :surname, :position, :email, :phone, :password, :password_confirmation, :branch, :social, :profile_image
+  permit_params :name, :surname, :position, :email, :phone, :password, :password_confirmation, :branch, :social, :profile_image, :branch
 
   index do
     selectable_column
@@ -25,6 +25,7 @@ ActiveAdmin.register TeamMember do
 
   form do |f|
     f.inputs do
+      f.input :branch, collection: ['Eduinternational', 'Baku', 'Kiev', 'Lviv', 'Odessa', 'Tbilisi', 'Tirana']
       f.input :name
       f.input :surname
       f.input :position
@@ -33,7 +34,6 @@ ActiveAdmin.register TeamMember do
       f.input :social
       f.input :password
       f.input :password_confirmation
-      f.input :branch
       f.input :profile_image
 
     end

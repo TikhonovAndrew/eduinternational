@@ -1,4 +1,5 @@
 ActiveAdmin.register Event do
+
   menu parent: 'Components'
   permit_params :branch, :name, :location, :description, :cover, :event_date_time, :event_date_time_end, :slug, :google_map_latitude, :google_map_longitude, :event_image, :event_image1, :subject
 
@@ -35,8 +36,8 @@ end
       f.input :cover
       f.input :event_image
       f.input :event_image1
-      f.input :event_date_time
-      f.input :event_date_time_end
+      f.input :event_date_time , :as => :datepicker
+      f.input :event_date_time_end, :as => :datepicker
     end
     f.actions
   end

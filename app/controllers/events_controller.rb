@@ -6,9 +6,9 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.friendly.find(params[:id])
-    @events_kiev = Event.where('branch = ?', 'Kiev').all
-    @event_confirmation = EventConfirmation.new
+    @events = Event.all
+    @posts = Post.all
+    @branches = Branch.all
   end
 
 

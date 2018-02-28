@@ -2,10 +2,16 @@ class Branch < ApplicationRecord
   extend FriendlyId
   friendly_id :name, use: :slugged
 
+
   has_many :socials
+  has_many :events
+  has_many :fairs
+  has_many :posts
+  has_many :countries
+  has_many :schools
+  has_many :team_members
 
-
-  has_attached_file :cover, styles: { thumb: "100x100#", medium: "400x400>", slide: '1200x400#' }, default_url: "/images/event/default.png"
+  has_attached_file :cover, styles: { thumb: "100x30#", medium: "400x400>", slide: '1200x400#' }, default_url: "/images/event/default.png"
   validates_attachment_content_type :cover, content_type: /\Aimage\/.*\Z/
   attr_accessor :remove_cover
 
@@ -15,7 +21,7 @@ class Branch < ApplicationRecord
        self.cover = nil
     end
 
-  has_attached_file :branch_logo, styles: { thumb: "100x100#", medium: "400x400>", slide: '1200x400#' }, default_url: "/images/event/default.png"
+  has_attached_file :branch_logo, styles: { thumb: "50x50#", medium: "400x400>", slide: '1200x400#' }, default_url: "/images/event/default.png"
   validates_attachment_content_type :branch_logo, content_type: /\Aimage\/.*\Z/
   attr_accessor :remove_branch_logo
 

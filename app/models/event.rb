@@ -2,6 +2,9 @@ class Event < ApplicationRecord
   extend FriendlyId
   friendly_id :name, use: :slugged
 
+  belongs_to :branch
+  has_many :event_confirmations
+
   has_attached_file :cover, styles: { thumb: "100x100#", medium: "400x400>", slide: '1200x400#' }, default_url: "/images/event/default.png"
   validates_attachment_content_type :cover, content_type: /\Aimage\/.*\Z/
   attr_accessor :remove_cover

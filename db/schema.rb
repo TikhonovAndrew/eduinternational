@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180225234122) do
+ActiveRecord::Schema.define(version: 20180228232417) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -61,7 +61,6 @@ ActiveRecord::Schema.define(version: 20180225234122) do
   end
 
   create_table "countries", force: :cascade do |t|
-    t.string "branch"
     t.string "name"
     t.text "about"
     t.text "visa_box"
@@ -75,6 +74,8 @@ ActiveRecord::Schema.define(version: 20180225234122) do
     t.boolean "selective"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "branch_id"
+    t.index ["branch_id"], name: "index_countries_on_branch_id"
     t.index ["slug"], name: "index_countries_on_slug", unique: true
   end
 
@@ -90,7 +91,6 @@ ActiveRecord::Schema.define(version: 20180225234122) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.string "branch"
     t.string "name"
     t.string "subject"
     t.string "location"
@@ -114,6 +114,8 @@ ActiveRecord::Schema.define(version: 20180225234122) do
     t.datetime "event_image1_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "branch_id"
+    t.index ["branch_id"], name: "index_events_on_branch_id"
     t.index ["slug"], name: "index_events_on_slug", unique: true
   end
 
@@ -129,7 +131,6 @@ ActiveRecord::Schema.define(version: 20180225234122) do
   end
 
   create_table "fairs", force: :cascade do |t|
-    t.string "branch"
     t.string "name"
     t.string "location"
     t.text "description"
@@ -148,6 +149,8 @@ ActiveRecord::Schema.define(version: 20180225234122) do
     t.datetime "fair_image_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "branch_id"
+    t.index ["branch_id"], name: "index_fairs_on_branch_id"
     t.index ["slug"], name: "index_fairs_on_slug", unique: true
   end
 
@@ -164,11 +167,9 @@ ActiveRecord::Schema.define(version: 20180225234122) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "branch"
     t.string "name"
     t.string "title"
     t.text "body"
-    t.datetime "published_at"
     t.string "cover_file_name"
     t.string "cover_content_type"
     t.integer "cover_file_size"
@@ -180,6 +181,8 @@ ActiveRecord::Schema.define(version: 20180225234122) do
     t.string "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "branch_id"
+    t.index ["branch_id"], name: "index_posts_on_branch_id"
     t.index ["slug"], name: "index_posts_on_slug", unique: true
   end
 
@@ -192,7 +195,6 @@ ActiveRecord::Schema.define(version: 20180225234122) do
   end
 
   create_table "schools", force: :cascade do |t|
-    t.string "branch"
     t.string "name"
     t.text "about"
     t.text "summary"
@@ -211,6 +213,8 @@ ActiveRecord::Schema.define(version: 20180225234122) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "country_id"
+    t.integer "branch_id"
+    t.index ["branch_id"], name: "index_schools_on_branch_id"
     t.index ["country_id"], name: "index_schools_on_country_id"
     t.index ["slug"], name: "index_schools_on_slug", unique: true
   end
@@ -240,17 +244,42 @@ ActiveRecord::Schema.define(version: 20180225234122) do
     t.string "position"
     t.string "phone"
     t.string "social"
-    t.string "branch", default: "All", null: false
     t.string "profile_image_file_name"
     t.string "profile_image_content_type"
     t.integer "profile_image_file_size"
     t.datetime "profile_image_updated_at"
     t.string "slug"
+    t.integer "team_members_id"
+    t.integer "branch_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["branch_id"], name: "index_team_members_on_branch_id"
     t.index ["email"], name: "index_team_members_on_email", unique: true
     t.index ["reset_password_token"], name: "index_team_members_on_reset_password_token", unique: true
     t.index ["slug"], name: "index_team_members_on_slug", unique: true
+    t.index ["team_members_id"], name: "index_team_members_on_team_members_id"
+  end
+
+  create_table "testimonials", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "category"
+    t.string "school"
+    t.text "body"
+    t.string "slug"
+    t.string "cover_file_name"
+    t.string "cover_content_type"
+    t.integer "cover_file_size"
+    t.datetime "cover_updated_at"
+    t.string "author_photo_file_name"
+    t.string "author_photo_content_type"
+    t.integer "author_photo_file_size"
+    t.datetime "author_photo_updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "branch_id"
+    t.index ["branch_id"], name: "index_testimonials_on_branch_id"
+    t.index ["slug"], name: "index_testimonials_on_slug", unique: true
   end
 
 end

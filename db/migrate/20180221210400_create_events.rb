@@ -1,7 +1,6 @@
 class CreateEvents < ActiveRecord::Migration[5.1]
   def change
     create_table :events do |t|
-      t.string :branch	
       t.string :name
       t.string :subject
       t.string :location
@@ -19,11 +18,6 @@ class CreateEvents < ActiveRecord::Migration[5.1]
     end
     
     add_index :events, :slug, unique: true
-  end
-
-  def self.down
-    remove_attachment :events, :cover
-    remove_attachment :events, :event_image
-    remove_attachment :events, :event_image1
+    add_reference :events, :branch, index: true, foreign_key: true
   end
 end

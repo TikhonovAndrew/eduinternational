@@ -26,7 +26,8 @@ class School < ApplicationRecord
   def delete_school_image
     self.school_image = nil
   end
-  
+
+  belongs_to :branch
   belongs_to :country
   has_many :programs
   accepts_nested_attributes_for :programs, reject_if: :all_blank, allow_destroy: true

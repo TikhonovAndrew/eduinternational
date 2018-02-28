@@ -5,32 +5,36 @@ ActiveAdmin.register_page "Dashboard" do
       column do
         panel "Recent Events" do
           table_for Event.order("event_date_time desc").limit(10) do
-            column("Name")
-            column("Start date")
-            column("Total") 
+            column("Name") { |order| link_to(order.name, admin_event_confirmations_path)}
+            column("Start date")  { |order| (order.event_date_time) }
+            column("Landing Page") { |order| link_to(order.name, event_path(order.name))}
+          end
+        end
+      end
+            column do
+        panel "Recent Posts" do
+          table_for Post.where("created_at").limit(10).each do |post|
+            column("Landing Page") { |order| link_to(order.name, post_path(order.name))}
+            column(:created_at) { |order| link_to(order.created_at, admin_post_path(order.name))}
           end
         end
       end
 
-      column do
-        panel "Team Members Online" do
-          table_for TeamMember.where("current_sign_in_at").limit(10).each do |teammember|
-            column(:email)
-            column(:current_sign_in_at)
-          end
-        end
-      end
+      
     end # columns
 
     columns do
       column do
-        div do
-          br
-          text_node %{<iframe src="https://cloud.digitalocean.com/droplets/83545840/graphs?i=5b79e9"
-                              width="500" height="300" scrolling="no" frameborder="no">
-                      </iframe>}.html_safe
+        panel "Team Members" do
+          table_for TeamMember.where("current_sign_in_at").limit(10).each do |teammember|
+            column("Name"){ |order| link_to(order.name, team_members_path)}
+            column("Position"){ |order| link_to(order.position, team_members_path(order.name))}
+            column(:email)
+            column(:phone)
+          end
         end
       end
+
 
 
 

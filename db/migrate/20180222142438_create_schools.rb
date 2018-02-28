@@ -1,7 +1,6 @@
 class CreateSchools < ActiveRecord::Migration[5.1]
   def change
     create_table :schools do |t|
-      t.string :branch
       t.string :name
       t.text :about
       t.text :summary
@@ -17,5 +16,6 @@ class CreateSchools < ActiveRecord::Migration[5.1]
 
     add_index :schools, :slug, unique: true
     add_reference :schools, :country, index: true, foreign_key: true
+    add_reference :schools, :branch, index: true, foreign_key: true
   end
 end

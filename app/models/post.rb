@@ -7,6 +7,8 @@ class Post < ApplicationRecord
     slug.blank? || title_changed?
   end
 
+  belongs_to :branch
+  
   has_attached_file :cover, styles: { thumb: "340x188#", medium: "400x400>", slide: '1200x400#' }, default_url: "/images/event/default.png"
   validates_attachment_content_type :cover, content_type: /\Aimage\/.*\Z/
   

@@ -1,7 +1,6 @@
 class CreateFairs < ActiveRecord::Migration[5.1]
   def change
-    create_table :fairs do |t|
-      t.string :branch	
+    create_table :fairs do |t|	
       t.string :name
       t.string :location
       t.text :description
@@ -17,10 +16,6 @@ class CreateFairs < ActiveRecord::Migration[5.1]
     end
     
     add_index :fairs, :slug, unique: true
-  end
-
-  def self.down
-    remove_attachment :fairs, :cover
-    remove_attachment :fairs, :fair_image
+    add_reference :fairs, :branch, index: true, foreign_key: true
   end
 end

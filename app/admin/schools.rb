@@ -1,6 +1,6 @@
 ActiveAdmin.register School do
   menu parent: 'Components'
-  permit_params :branch, :name, :about, :summary, :cover, :video, :category, :link, :cover, :school_image, :slug, :country, :country_id
+  permit_params :branch, :branch_id, :name, :about, :summary, :cover, :video, :category, :link, :cover, :school_image, :slug, :country, :country_id
   index do
     selectable_column
     column :branch
@@ -23,7 +23,8 @@ end
 
     form do |f|
     f.inputs do
-      f.input :branch, collection: ['Eduinternational', 'Baku', 'Kiev', 'Lviv', 'Odessa', 'Tbilisi', 'Tirana']
+      f.input :branch
+      f.input :country
       f.input :name
       f.input :category, collection: ['Secondary Education', 'Higher Education']
       f.input :about

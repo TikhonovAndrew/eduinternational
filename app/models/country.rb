@@ -6,6 +6,7 @@ class Country < ApplicationRecord
       slug.blank? || name_changed?
     end
 
+    belongs_to :branch
     has_many :schools
     
     has_attached_file :country_image, styles: { thumb: "100x100#", medium: "400x400>", slide: '1200x400#' }, default_url: "/images/country/default.png"

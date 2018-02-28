@@ -3,17 +3,16 @@ ActiveAdmin.register Branch do
   permit_params :city, :name, :title, :description, :google_map_latitude, :google_map_longitude, :address, :phone, :email, :opened_at, :cover, :branch_logo, :slider_image, :slider_image1, :video_link
   index do
     selectable_column
-    column :branch
     column :name
     column :email
     actions
   end
 
   filter :name
-  filter :branch
   filter :created_at
   filter :email
   filter :phone
+  filter :branch
 
   controller do
   def find_resource

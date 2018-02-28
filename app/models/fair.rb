@@ -1,7 +1,8 @@
 class Fair < ApplicationRecord
   extend FriendlyId
   friendly_id :name, use: :slugged
-
+  
+  belongs_to :branch
   has_many :fair_confirmations
 
   has_attached_file :cover, styles: { thumb: "100x100#", medium: "400x400>", slide: '1200x400#' }, default_url: "/images/event/default.png"

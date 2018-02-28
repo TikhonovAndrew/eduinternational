@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   post '/events/:id/register', to: 'event_confirmations#create'
 
 resources :branches
+resources :posts
+resources :team_members
 end

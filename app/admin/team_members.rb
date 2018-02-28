@@ -1,6 +1,6 @@
 ActiveAdmin.register TeamMember do
   menu parent: 'General'
-  permit_params :name, :surname, :position, :email, :phone, :password, :password_confirmation, :branch, :social, :profile_image, :branch
+  permit_params :name, :surname, :position, :email, :phone, :password, :password_confirmation, :branch, :social, :profile_image, :branch_id
 
   index do
     selectable_column
@@ -13,9 +13,9 @@ ActiveAdmin.register TeamMember do
   end
 
   filter :email
-  filter :current_sign_in_at
-  filter :sign_in_count
+  filter :phone
   filter :created_at
+  filter :branch
 
   controller do
     def find_resource
@@ -25,7 +25,7 @@ ActiveAdmin.register TeamMember do
 
   form do |f|
     f.inputs do
-      f.input :branch, collection: ['Eduinternational', 'Baku', 'Kiev', 'Lviv', 'Odessa', 'Tbilisi', 'Tirana']
+      f.input :branch
       f.input :name
       f.input :surname
       f.input :position

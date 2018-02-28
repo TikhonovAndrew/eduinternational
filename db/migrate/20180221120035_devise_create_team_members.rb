@@ -38,14 +38,15 @@ class DeviseCreateTeamMembers < ActiveRecord::Migration[5.1]
       t.string :position
       t.string :phone
       t.string :social
-      t.string :branch, null: false, default: 'All'
       t.attachment :profile_image
       t.string :slug
+      t.references :team_members, :branch, index: true, foreign_key: true
 
       t.timestamps null: false
     end
 
     # Indexes
+
     add_index :team_members, :slug,                 unique: true
     add_index :team_members, :email,                unique: true
     add_index :team_members, :reset_password_token, unique: true

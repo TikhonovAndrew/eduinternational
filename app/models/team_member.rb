@@ -6,7 +6,12 @@ class TeamMember < ApplicationRecord
   extend FriendlyId
   friendly_id :name, use: :slugged
 
-  has_many :posts
+  def should_generate_new_friendly_id?
+    slug.blank? || name_changed?
+  end
+
+  belongs_to :branch
+
 
   has_attached_file :profile_image, styles: { thumb: "100x100#", medium: "400x400>", slide: '1200x400#' }, default_url: "/images/event/default.png"
   validates_attachment_content_type :profile_image, content_type: /\Aimage\/.*\Z/

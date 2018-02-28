@@ -1,9 +1,10 @@
 ActiveAdmin.register Country do
   menu parent: 'Components'
-  permit_params :name, :about, :visa_box, :slug, :video, :country_code, :selective, :country_image, :branch
+  permit_params :name, :about, :visa_box, :slug, :video, :country_code, :selective, :country_image, :branch_id, :branch_id
   index do
     selectable_column
     column :name
+    column :branch
     column :country_code
     column :slug
     actions
@@ -16,13 +17,13 @@ ActiveAdmin.register Country do
 end
 
   filter :name
-  filter :country
+  filter :country_code
   filter :branch
   filter :category
 
  form do |f|
     f.inputs do
-      f.input :branch, collection: ['Eduinternational', 'Baku', 'Kiev', 'Lviv', 'Odessa', 'Tbilisi', 'Tirana']
+      f.input :branch
       f.input :name
       f.input :about
       f.input :visa_box

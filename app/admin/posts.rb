@@ -1,6 +1,6 @@
 ActiveAdmin.register Post do
   menu parent: 'Components'
-  permit_params :name, :title, :body, :branch, :cover, :post_image, :slug, :published_at
+  permit_params :name, :title, :body, :branch_id, :cover, :post_image, :slug
   index do
     selectable_column
     column :branch
@@ -25,7 +25,7 @@ ActiveAdmin.register Post do
 
     form do |f|
     f.inputs do
-      f.input :branch, collection: ['Eduinternational', 'Baku', 'Kiev', 'Lviv', 'Odessa', 'Tbilisi', 'Tirana']
+      f.input :branch
       f.input :name
       f.input :title
       f.input :body

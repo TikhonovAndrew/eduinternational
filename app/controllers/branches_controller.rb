@@ -6,5 +6,7 @@ class BranchesController < ApplicationController
 		@schools = School.all
 		@countries = Country.all
 		@posts = Post.all
+		@team_members = TeamMember.all
+		@testimonials = Testimonial.all
     end
 end

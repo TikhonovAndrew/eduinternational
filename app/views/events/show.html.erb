@@ -1,294 +1,41 @@
-<% @events.each do |event| %>
-<% event.branch == '?' %>
-<% case event.branch %>
-<% when 'Kiev' %>
-<!DOCTYPE html>
-<html lang="ru">
+
+<<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">  
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="../../favicon.ico">
-
-  <!-- Google Fonts -->
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans%3A300%2C400%2C500%2C600%2C700%2C800%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik">
-
-  <!-- CSS Global Compulsory -->
-  <link rel="stylesheet" href="../assets/vendor/bootstrap/bootstrap.min.css">
-
+  <meta charset="UTF-8">
   <!-- CSS Implementing Plugins -->
-  <link rel="stylesheet" href="../assets/vendor/icon-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="../assets/vendor/icon-line/css/simple-line-icons.css">
-  <link rel="stylesheet" href="../assets/vendor/icon-hs/style.css">
-  <link rel="stylesheet" href="../assets/vendor/hamburgers/hamburgers.min.css">
-  <link rel="stylesheet" href="../assets/vendor/animate.css">
-  <link rel="stylesheet" href="../assets/vendor/slick-carousel/slick/slick.css">
-  <link rel="stylesheet" href="../assets/vendor/fancybox/jquery.fancybox.css">
-
-  <!-- CSS Template -->
-  <link rel="stylesheet" href="../event/assets/css/styles.op-event.css">
-
-  <!-- CSS Customization -->
-  <link rel="stylesheet" href="../event/assets/css/custom.css">
-  <title><%= event.name %></title>
+<link  rel="stylesheet" href="../../assets/vendor/animate.css">
+  <title>Document</title>
 </head>
 <body>
-<main>
-  <!-- Header v1 -->
-  <header id="js-header" class="u-header u-header--sticky-top u-header--change-appearance g-z-index-9999"
-              data-header-fix-moment="100">
-    <div class="light-theme u-header__section g-bg-darkblue-opacity-0_7 g-transition-0_3 g-py-10"
-             data-header-fix-moment-exclude="light-theme g-bg-darkblue-opacity-0_7"
-             data-header-fix-moment-classes="dark-theme u-shadow-v18 g-bg-white-opacity-0_9">
-      <nav class="navbar navbar-expand-lg g-py-0">
-        <div class="container g-pos-rel">
-          <!-- Logo -->
+  <section class="g-flex-centered g-height-450 g-bg-gray-light-v5 g-py-30">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 align-self-center g-py-20">
+        <h2 class="h4 text-uppercase g-letter-spacing-1 g-mb-20" data-animation="fadeInLeft" data-animation-delay="500" data-animation-duration="2000">Content block</h2>
+        <p class="lead mb-0 g-line-height-2" data-animation="fadeInLeft" data-animation-delay="500" data-animation-duration="2000">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin hendrerit rhoncus tempus. Donec id orci malesuada, finibus odio quis, tincidunt libero. Fusce in venenatis ligula. Etiam eget lacus id erat scelerisque tempor.</p>
+      </div>
 
-          <% @branches.where('city = ?', 'Kiev').each do |branch| %>
-
-          <a href="#!" class="js-go-to navbar-brand u-header__logo"
-                 data-type="static">
-            <img class="u-header__logo-img u-header__logo-img--main d-block" src="<%= branch.branch_logo(:thumb) %>" alt="<%= branch.name %>"
-                     data-header-fix-moment-exclude="d-block"
-                     data-header-fix-moment-classes="d-none">
-
-              <img class="u-header__logo-img u-header__logo-img--main d-none" src="<%= branch.branch_logo(:thumb) %>" alt="<%= branch.name %>"
-                     data-header-fix-moment-exclude="d-none"
-                     data-header-fix-moment-classes="d-block">
-          </a>
-
-          <% end %>
-
-          <!-- End Logo -->
-
-          <!-- Navigation -->
-          <div class="collapse navbar-collapse align-items-center flex-sm-row" id="navBar">
-            <ul id="js-scroll-nav" class="navbar-nav text-uppercase g-font-weight-700 g-font-size-11 g-pt-20 g-pt-5--lg ml-auto">
-              <li class="nav-item g-mr-15--lg g-mb-7 g-mb-0--lg active">
-                <a href="#home" class="nav-link p-0">Начало</a>
-              </li>
-              <li class="nav-item g-mx-15--lg g-mb-7 g-mb-0--lg">
-                <a href="#latestposts" class="nav-link p-0">Последние новости</a>
-              </li>
-              <li class="nav-item g-mx-15--lg g-mb-7 g-mb-0--lg">
-                <a href="#upcoming" class="nav-link p-0">Предстоящие События</a>
-              </li>
-              <li class="nav-item g-mx-15--lg g-mb-7 g-mb-0--lg">
-                <a href="#register" class="nav-link p-0">Регистрация</a>
-              </li>
-              <li class="nav-item g-mx-15--lg g-mb-7 g-mb-0--lg">
-                <a href="#contacts" class="nav-link p-0">Контакты</a>
-              </li>
-            </ul>
-          </div>
-          <!-- End Navigation -->
-
-          <!-- Responsive Toggle Button -->
-          <button class="navbar-toggler btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-15 g-right-0" type="button"
-                  aria-label="Toggle navigation"
-                  aria-expanded="false"
-                  aria-controls="navBar"
-                  data-toggle="collapse"
-                  data-target="#navBar">
-            <span class="hamburger hamburger--slider">
-              <span class="hamburger-box">
-                <span class="hamburger-inner"></span>
-              </span>
-            </span>
-          </button>
-          <!-- End Responsive Toggle Button -->
-        </div>
-      </nav>
+      <div class="col-md-6 align-self-center g-py-20">
+        <img class="w-100" src="../../assets/img-temp/400x270/img28.jpg" alt="Iamge Description" data-animation="fadeInRight" data-animation-delay="500" data-animation-duration="2000">
+      </div>
     </div>
-  </header>
-  <!-- End Header v1 -->
+  </div>
+</section>
+  <script src="../assets/vendor/jquery/jquery.min.js"></script>
+  <script src="../assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
+<!-- JS Implementing Plugins -->
+<script  src="../../assets/vendor/appear.js"></script>
 
-<!-- Section Content -->
-<section id="home" class="g-bg-img-hero g-pos-rel u-bg-overlay g-bg-darkblue-opacity-0_7--after g-pt-150" style="background-image: url(<%= event.cover %>);">
-        <div class="container g-max-width-750 u-bg-overlay__inner g-color-white g-mb-60">
-          <!-- Countdown v4 -->
-          <div class="js-countdown text-center text-uppercase u-countdown-v4 g-mb-40 g-mb-70--md"
-               data-end-date="<%= event.event_date_time %>"
-               data-month-format="%m"
-               data-days-format="%D"
-               data-hours-format="%H"
-               data-minutes-format="%M"
-               data-seconds-format="%S">
-            <div class="d-inline-block g-font-size-12 g-px-10 g-px-50--md g-py-15">
-              <div class="js-cd-days g-font-size-20 g-font-size-40--md g-font-weight-700 g-line-height-1 g-mb-5"></div>
-              <span>Дней</span>
-            </div>
+<!-- JS Unify -->
+<script  src="../../assets/js/components/hs.onscroll-animation.js"></script>
 
-            <div class="d-inline-block g-font-size-12 g-brd-left g-brd-white-opacity-0_4 g-px-10 g-px-60--md g-py-15">
-              <div class="js-cd-hours g-font-size-20 g-font-size-40--md g-font-weight-700 g-line-height-1 g-mb-5"></div>
-              <span>часов</span>
-            </div>
-
-            <div class="d-inline-block g-font-size-12 g-brd-left g-brd-white-opacity-0_4 g-px-10 g-px-60--md g-py-15">
-              <div class="js-cd-minutes g-font-size-20 g-font-size-40--md g-font-weight-700 g-line-height-1 g-mb-5"></div>
-              <span>Минут</span>
-            </div>
-
-            <div class="d-inline-block g-font-size-12 g-brd-left g-brd-white-opacity-0_4 g-px-10 g-px-50--md g-py-15">
-              <div class="js-cd-seconds g-font-size-20 g-font-size-40--md g-font-weight-700 g-line-height-1 g-mb-5"></div>
-              <span>Секунд</span>
-            </div>
-          </div>
-          <!-- End Countdown v4 -->
-
-          <h2 class="text-center text-uppercase h2 g-font-weight-700 g-font-size-40 g-font-size-60--md g-color-white g-mb-30 g-mb-70--md"><%= event.name %></h2>
-
-          <div class="row">
-            <div class="col-sm-6 col-md-4 text-center text-md-left g-mb-30 g-mb-0--md">
-              <div class="media">
-                <div class="media-left d-flex align-self-center g-hidden-sm-down g-mr-20">
-                  <i class="fa fa-calendar g-font-size-27 g-color-white-opacity-0_5"></i>
-                </div>
-
-                <div class="media-body text-uppercase">
-                  <p class="g-mb-5"><strong class="g-font-size-14 g-color-white-opacity-0_5">Когда</strong></p>
-                  <h3 class="h3 g-font-size-15 g-color-white mb-0"><%= event.event_date_time.strftime('%Y/%m/%d, %H:%M') %></h3>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-sm-6 col-md-5 text-center text-md-left g-mb-30 g-mb-0--md">
-              <div class="media">
-                <div class="media-left d-flex align-self-center g-hidden-sm-down g-mr-20">
-                  <i class="fa fa-map-marker g-font-size-27 g-color-white-opacity-0_5"></i>
-                </div>
-
-                <div class="media-body text-uppercase">
-                  <p class="g-mb-5"><strong class="g-font-size-14 g-color-white-opacity-0_5">Where</strong></p>
-                  <h3 class="h3 g-font-size-15 g-color-white mb-0"><%= event.location %></h3>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-3 text-center text-md-right">
-              <a class="btn btn-lg text-uppercase u-btn-white g-font-weight-700 g-font-size-11 g-color-white--hover g-bg-primary--hover g-brd-none rounded-0 g-py-18 g-px-20" href="#!">Register Now</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="container u-bg-overlay__inner g-bottom-minus-70 px-0">
-          <div class="row u-shadow-v23 g-theme-bg-blue-dark-v2 mx-0">
-            <div class="col-md-6 px-0">
-              <div class="js-carousel text-center u-carousel-v5 g-overflow-hidden h-100 g-max-height-50vh"
-                   data-infinite="true"
-                   data-arrows-classes="u-arrow-v1 g-absolute-centered--y g-width-40 g-height-40 g-font-size-20 g-color-white g-color-primary--hover g-bg-primary g-bg-white--hover g-transition-0_2 g-transition--ease-in"
-                   data-arrow-left-classes="fa fa-angle-left g-left-0"
-                   data-arrow-right-classes="fa fa-angle-right g-right-0">
-                <div class="js-slide g-bg-img-hero g-min-height-50vh" style="background-image: url(<%= event.event_image %>);"></div>
-
-                <div class="js-slide g-bg-img-hero g-min-height-50vh" style="background-image: url(<%= event.event_image1 %>);"></div>
-              </div>
-            </div>
-
-            <div class="col-md-6 d-flex g-min-height-50vh g-theme-color-gray-dark-v1 g-px-50 g-py-80 g-py-50--md g-py-20--lg">
-              <div class="align-self-center w-100">
-                <h2 class="text-uppercase g-font-weight-700 g-font-size-30 g-color-primary g-mb-10"><%= event.name %></h2>
-                <h3 class="text-uppercase g-font-weight-500 g-font-size-13 g-color-white g-mb-20"><%= event.subject %></h3>
-                <p class="g-font-size-14"><%= event.description %></p>
-                <p class="g-font-size-14 mb-0"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End Section Content -->
- 
-  </main>
-  
-    <!-- JS Global Compulsory -->
-    <script src="../assets/vendor/jquery/jquery.min.js"></script>
-    <script src="../assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
-    <script src="../assets/vendor/popper.min.js"></script>
-    <script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
-
-    <!-- JS Implementing Plugins -->
-    <script src="../assets/vendor/appear.js"></script>
-    <script src="../assets/vendor/masonry/dist/masonry.pkgd.min.js"></script>
-    <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="../assets/vendor/jquery.countdown.min.js"></script>
-    <script src="../assets/vendor/fancybox/jquery.fancybox.js"></script>
-    <script src="../assets/vendor/slick-carousel/slick/slick.js"></script>
-    <script src="../assets/vendor/gmaps/gmaps.min.js"></script>
-
-    <!-- JS Unify -->
-    <script src="../assets/js/hs.core.js"></script>
-    <script src="../assets/js/components/hs.header.js"></script>
-    <script src="../assets/js/helpers/hs.hamburgers.js"></script>
-    <script src="../assets/js/components/hs.scroll-nav.js"></script>
-    <script src="../assets/js/components/hs.tabs.js"></script>
-    <script src="../assets/js/components/hs.countdown.js"></script>
-    <script src="../assets/js/components/hs.carousel.js"></script>
-    <script src="../assets/js/components/gmap/hs.map.js"></script>
-    <script src="../assets/js/components/hs.go-to.js"></script>
-
-    <!-- JS Customization -->
-    <script src="../assets/js/custom.js"></script>
-
-    <!-- JS Plugins Init. -->
-    <script>
-      // initialization of google map
-      function initMap() {
-        $.HSCore.components.HSGMap.init('.js-g-map');
-      }
-
-      $(document).on('ready', function () {
-        // initialization of carousel
-        $.HSCore.components.HSCarousel.init('.js-carousel');
-
-        // initialization of header
-        $.HSCore.components.HSHeader.init($('#js-header'));
-        $.HSCore.helpers.HSHamburgers.init('.hamburger');
-
-        // initialization of tabs
-        $.HSCore.components.HSTabs.init('[role="tablist"]');
-
-        // initialization of go to section
-        $.HSCore.components.HSGoTo.init('.js-go-to');
-
-        // initialization of countdowns
-        var countdowns = $.HSCore.components.HSCountdown.init('.js-countdown', {
-          yearsElSelector: '.js-cd-years',
-          monthElSelector: '.js-cd-month',
-          daysElSelector: '.js-cd-days',
-          hoursElSelector: '.js-cd-hours',
-          minutesElSelector: '.js-cd-minutes',
-          secondsElSelector: '.js-cd-seconds'
-        });
-      });
-
-      $(window).on('load', function() {
-        // initialization of HSScrollNav
-        $.HSCore.components.HSScrollNav.init($('#js-scroll-nav'), {
-          duration: 700
-        });
-
-        // initialization of masonry.js
-        $('.masonry-grid').imagesLoaded().then(function () {
-          $('.masonry-grid').masonry({
-            columnWidth: '.masonry-grid-sizer',
-            itemSelector: '.masonry-grid-item',
-            percentPosition: true
-          });
-        });
-      });
-
-      $(window).on('resize', function () {
-        setTimeout(function () {
-          $.HSCore.components.HSTabs.init('[role="tablist"]');
-        }, 200);
-      });
-    </script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtt1z99GtrHZt_IcnK-wryNsQ30A112J0&callback=initMap" async></script>  
+<!-- JS Plugins Init. -->
+<script >
+  $(document).ready(function () {
+    // initialization of scroll animation
+    $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
+  });
+</script>
 </body>
 </html>
-<% else %>
-<% end %>
-<% end %>

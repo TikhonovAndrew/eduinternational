@@ -23,7 +23,7 @@ end
 
     form do |f|
     f.inputs do
-      f.input :city, collection: ['Baku', 'Kiev', 'Lviv', 'Odessa', 'Tbilisi', 'Tirana']
+      f.input :city, collection: ['Baku', 'Kiev', 'Lviv', 'Odessa', 'Tbilisi', 'Tirana', 'All']
       f.input :name
       f.input :title
       f.input :description
